@@ -7,13 +7,15 @@ def api.app.register(~method, ~path, handler) =
     catch _ do
       api.responses.text(
         status=api.codes.internalservererror,
-        body=
-          "Internal Server Error"
+        body="Internal Server Error"
       )
     end
   end
 
   harbor.http.register.simple(
-    port=config.server.http.port, method=method, path, handle
+    port=config.server.http.port,
+    method=method,
+    path,
+    handle
   )
 end

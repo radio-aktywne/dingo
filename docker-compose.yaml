@@ -4,19 +4,19 @@ services:
       context: ./
       network: host
     environment:
-      - "DINGO__SERVER__SRT__PORT=${DINGO__SERVER__SRT__PORT:-10100}"
-      - "DINGO__SERVER__HTTP__PORT=${DINGO__SERVER__HTTP__PORT:-10101}"
-      - "DINGO__STATE__STORE__PATH=${DINGO__STATE__STORE__PATH:-data/state.json}"
-      - "DINGO__STATE__CACHE__TTL=${DINGO__STATE__CACHE__TTL:-60}"
-      - "DINGO__PELICAN__HTTP__SCHEME=${DINGO__PELICAN__HTTP__SCHEME:-http}"
       - "DINGO__PELICAN__HTTP__HOST=${DINGO__PELICAN__HTTP__HOST:-localhost}"
-      - "DINGO__PELICAN__HTTP__PORT=${DINGO__PELICAN__HTTP__PORT:-10200}"
       - "DINGO__PELICAN__HTTP__PATH=${DINGO__PELICAN__HTTP__PATH:-}"
+      - "DINGO__PELICAN__HTTP__PORT=${DINGO__PELICAN__HTTP__PORT:-10200}"
+      - "DINGO__PELICAN__HTTP__SCHEME=${DINGO__PELICAN__HTTP__SCHEME:-http}"
       - "DINGO__QUOKKA__ICY__HOST=${DINGO__QUOKKA__ICY__HOST:-localhost}"
+      - "DINGO__QUOKKA__ICY__MOUNT=${DINGO__QUOKKA__ICY__MOUNT:-radio.mp3}"
+      - "DINGO__QUOKKA__ICY__PASSWORD=${DINGO__QUOKKA__ICY__PASSWORD:-password}"
       - "DINGO__QUOKKA__ICY__PORT=${DINGO__QUOKKA__ICY__PORT:-10000}"
       - "DINGO__QUOKKA__ICY__USER=${DINGO__QUOKKA__ICY__USER:-source}"
-      - "DINGO__QUOKKA__ICY__PASSWORD=${DINGO__QUOKKA__ICY__PASSWORD:-password}"
-      - "DINGO__QUOKKA__ICY__MOUNT=${DINGO__QUOKKA__ICY__MOUNT:-radio.mp3}"
+      - "DINGO__SERVER__HTTP__PORT=${DINGO__SERVER__HTTP__PORT:-10101}"
+      - "DINGO__SERVER__SRT__PORT=${DINGO__SERVER__SRT__PORT:-10100}"
+      - "DINGO__STATE__CACHE__TTL=${DINGO__STATE__CACHE__TTL:-60}"
+      - "DINGO__STATE__STORE__PATH=${DINGO__STATE__STORE__PATH:-data/state.json}"
     network_mode: host
     volumes:
       - data:/service/data/

@@ -17,7 +17,8 @@ def api.playlist.controller.put(request) =
     req = api.playlist.models.putrequest.deserialize(request.body())
     res = api.playlist.service.put(req)
     api.responses.json(
-      status=api.codes.ok, body=api.playlist.models.putresponse.serialize(res)
+      status=api.codes.ok,
+      body=api.playlist.models.putresponse.serialize(res)
     )
   catch error : [error.json] do
     api.responses.text(status=api.codes.badrequest, body=error.message)

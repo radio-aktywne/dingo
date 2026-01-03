@@ -1,4 +1,4 @@
-let api.schema = {}
+let api.openapi = {}
 
 %include "errors.liq"
 %include "service.liq"

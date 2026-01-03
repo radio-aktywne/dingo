@@ -1,4 +1,4 @@
-version: "3.39"
+version: "3.43"
 
 tasks:
   template:
@@ -8,7 +8,7 @@ tasks:
       GIT_CONFIG_GLOBAL: ""
       GIT_CONFIG_SYSTEM: ""
     cmds:
-      - >
+      - >-
         copier
         update
         --answers-file
@@ -17,7 +17,7 @@ tasks:
   flake:
     desc: Update flake.lock
     cmds:
-      - >
+      - >-
         nix
         --accept-flake-config
         --extra-experimental-features
@@ -30,7 +30,9 @@ tasks:
     desc: Format files
     cmds:
       - task: install-docs-internal
-      - >
+        vars:
+          CLI_ARGS: ""
+      - >-
         trunk
         fmt
         {{ .CLI_ARGS }}
@@ -38,25 +40,12 @@ tasks:
     desc: Lint files
     cmds:
       - task: install-docs-internal
-      - >
+        vars:
+          CLI_ARGS: ""
+      - >-
         trunk
         check
         {{ .CLI_ARGS }}
-  remove-docs-node-modules:
-    desc: Clean docs node_modules
-    dir: docs/
-    cmds:
-      - >
-        rm
-        --recursive
-        --force
-        node_modules/
-    status:
-      - >
-        test
-        '!'
-        -d
-        node_modules/
   install-docs:
     desc: Install docs dependencies
     dir: docs/
@@ -70,7 +59,7 @@ tasks:
     generates:
       - node_modules/**/*
     cmds:
-      - >
+      - >-
         npm
         install
         {{ .CLI_ARGS }}
@@ -81,33 +70,19 @@ tasks:
     cmds:
       - task: install-docs
         vars:
-          CLI_ARGS: >
+          CLI_ARGS: >-
             --prefer-offline
             --no-audit
             --no-fund
             --quiet
             --no-progress
   update-docs:
-    desc: Update docs dependencies
+    desc: Update docs package-lock.json
     dir: docs/
     cmds:
-      - task: install-docs-internal
-      - >
+      - >-
         npm
-        run
-        --
         update
-        {{ .CLI_ARGS }}
-  test-docs:
-    desc: Test docs
-    dir: docs/
-    cmds:
-      - task: install-docs-internal
-      - >
-        npm
-        run
-        --
-        test
         {{ .CLI_ARGS }}
   docs:
     desc: Run docusaurus
@@ -115,17 +90,19 @@ tasks:
     interactive: true
     cmds:
       - task: install-docs-internal
-      - >
+        vars:
+          CLI_ARGS: ""
+      - >-
         npm
-        run
+        exec
         --
-        docs
+        docusaurus
         {{ .CLI_ARGS | default "start --host 0.0.0.0" }}
   run:
     desc: Run the service
     interactive: true
     cmds:
-      - >
+      - >-
         liquidsoap
         src/main.liq
         {{ .CLI_ARGS }}
@@ -133,7 +110,7 @@ tasks:
     desc: Run in docker container
     interactive: true
     cmds:
-      - >
+      - >-
         docker
         compose
         up

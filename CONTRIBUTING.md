@@ -109,7 +109,7 @@ so you can format with it by using any editor formatting features.
 
 ## ▶️ Running
 
-To run the service, you can use the following command:
+You can use the following command to run the service:
 
 ```sh
 task run

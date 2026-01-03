@@ -11,7 +11,7 @@
 /data/
 
 # OpenAPI
-/openapi/schema.html
+/openapi/docs.html
 
 # Tracked, but not needed
 /.devcontainer/
