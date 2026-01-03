@@ -1,3 +1,10 @@
 plugins:
-  # Enable Liquidsoap plugin
+  # Enable Liquidsoap formatting plugin
   - liquidsoap-prettier
+  # Enable JSON sorting plugin
+  - prettier-plugin-sort-json
+  # Enable package.json sorting plugin
+  - prettier-plugin-packagejson
+
+# Sort JSON recursively
+jsonRecursiveSort: true

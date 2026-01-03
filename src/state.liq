@@ -13,7 +13,8 @@ def state =
     utils.store.cached.build(
       ttl=config.state.cache.ttl,
       utils.store.file.build(
-        default=serialize(default), config.state.store.path
+        default=serialize(default),
+        config.state.store.path
       )
     )
 

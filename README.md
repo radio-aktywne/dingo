@@ -2,7 +2,7 @@
 
 <div align="center">
 
-Broadcast composing 🧼
+Broadcast composing service 🧼
 
 [![Lint](https://github.com/radio-aktywne/dingo/actions/workflows/lint.yaml/badge.svg)](https://github.com/radio-aktywne/dingo/actions/workflows/lint.yaml)
 [![Image](https://github.com/radio-aktywne/dingo/actions/workflows/image.yaml/badge.svg)](https://github.com/radio-aktywne/dingo/actions/workflows/image.yaml)
@@ -15,8 +15,8 @@ Broadcast composing 🧼
 
 ## 💡 About
 
-`dingo` is a [`Liquidsoap`](https://www.liquidsoap.info)
-service for composing broadcast streams.
+`dingo` is a [`Liquidsoap`](https://www.liquidsoap.info) service
+for composing broadcast streams.
 
 ## 📄 Further Reading
 

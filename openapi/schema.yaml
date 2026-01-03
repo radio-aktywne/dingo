@@ -1,14 +1,14 @@
 info:
   title: dingo
-  description: Broadcast composing 🧼
+  description: Broadcast composing service 🧼
 openapi: 3.1.0
-servers:
-  - url: /
 paths:
   /ping:
     get:
       summary: Ping
       description: Do nothing.
+      tags:
+        - Ping
       responses:
         "204":
           description: Request fulfilled, nothing follows
@@ -21,6 +21,8 @@ paths:
     get:
       summary: Get playlist data
       description: Get the current playlist data.
+      tags:
+        - Playlist
       responses:
         "200":
           description: Request fulfilled, document follows
@@ -38,6 +40,8 @@ paths:
     put:
       summary: Update playlist data
       description: Update the current playlist data.
+      tags:
+        - Playlist
       requestBody:
         required: true
         content:

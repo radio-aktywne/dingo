@@ -1,8 +1,8 @@
-let api.schema.service = {}
+let api.openapi.service = {}
 
-def api.schema.service.get =
+def api.openapi.service.get =
   source = "openapi/schema.yaml"
-  target = "openapi/schema.html"
+  target = "openapi/docs.html"
 
   cached = ref("")
 
@@ -15,15 +15,16 @@ def api.schema.service.get =
       if
         process.test(
           process.quote.command(
-            args=["build-docs", "--output", target, source], "redocly"
+            args=["build-docs", "--output", target, source],
+            "redocly"
           )
         )
       then
         cached := current
       else
         error.raise(
-          api.schema.errors.generate,
-          "Failed to generate schema."
+          api.openapi.errors.generate,
+          "Failed to generate OpenAPI docs."
         )
       end
     end
