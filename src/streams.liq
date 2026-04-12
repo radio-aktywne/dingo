@@ -1,6 +1,6 @@
 let streams = {}
 
-let streams.radio =
+let streams.main =
   mksafe(
     utils.metadata.filter(
       constants.metadata.keys,
