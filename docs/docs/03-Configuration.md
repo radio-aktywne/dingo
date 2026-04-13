@@ -24,7 +24,7 @@ You can configure the service at runtime using various environment variables:
   (default: `localhost`)
 - `DINGO__QUOKKA__ICY__MOUNT` -
   mount point of the ICY API of the quokka service to send the audio to
-  (default: `radio.mp3`)
+  (default: `stream`)
 - `DINGO__QUOKKA__ICY__PASSWORD` -
   password to authenticate with the ICY API of the quokka service
   (default: `password`)
