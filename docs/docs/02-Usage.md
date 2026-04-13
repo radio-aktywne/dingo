@@ -27,16 +27,19 @@ but we recommend using [`Opus`](https://opus-codec.org) and
 They are free and open source, focused on quality and efficiency,
 and support embedding metadata into the stream.
 
-For example, you can use [`Liquidsoap`](https://www.liquidsoap.info) for that:
+For example, you can use [`ffmpeg`](https://ffmpeg.org) for that:
 
 ```sh
-liquidsoap 'output.srt(host="127.0.0.1", port=10100, %ogg(%opus), sine())'
-```
-
-Alternatively, you can use [`ffmpeg`](https://ffmpeg.org) to do the same:
-
-```sh
-ffmpeg -re -f lavfi -i sine -c libopus -f ogg srt://127.0.0.1:10100
+ffmpeg \
+    -re \
+    -f lavfi \
+    -i sine \
+    -c libopus \
+    -f ogg \
+    -ar 48000 \
+    -b:a 256k \
+    -metadata title=test \
+    srt://127.0.0.1:10100
 ```
 
 ## Managing playlists
