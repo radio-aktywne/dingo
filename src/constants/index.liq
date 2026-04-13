@@ -1,4 +1,4 @@
 let constants = {}
 
-%include "metadata.liq"
+%include "metadata/index.liq"
 %include "paths.liq"
