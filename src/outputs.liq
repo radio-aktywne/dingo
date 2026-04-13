@@ -1,7 +1,7 @@
 output.icecast(
   %mp3,
   host=config.quokka.icy.host,
-  mount=config.quokka.icy.mount,
+  mount="#{config.quokka.icy.mount}.mp3",
   password=config.quokka.icy.password,
   port=config.quokka.icy.port,
   user=config.quokka.icy.user,
