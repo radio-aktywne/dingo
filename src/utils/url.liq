@@ -1,6 +1,6 @@
 let utils.url = {}
 
-def utils.url.build(~scheme="http", ~host, ~port=null(), ~path=null()) =
+def utils.url.build(~host, ~path=null(), ~port=null(), ~scheme="http") =
   def pathify(value) =
     (value == "" or string.contains(prefix="/", value)) ? value : "/#{value}"
   end

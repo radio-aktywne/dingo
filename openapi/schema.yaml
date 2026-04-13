@@ -1,7 +1,7 @@
+openapi: 3.1.0
 info:
   title: dingo
   description: Broadcast composing service 🧼
-openapi: 3.1.0
 paths:
   /ping:
     get:

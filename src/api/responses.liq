@@ -1,33 +1,33 @@
 let api.responses = {}
 
-def api.responses.http(~status, ~headers=[], ~body) =
-  http.response(status_code=status, headers=headers, data=body)
+def api.responses.http(~body, ~headers=[], ~status) =
+  http.response(data=body, headers=headers, status_code=status)
 end
 
 def api.responses.empty(~headers=[]) =
-  api.responses.http(status=api.codes.nocontent, headers=headers, body="")
+  api.responses.http(body="", headers=headers, status=api.codes.nocontent)
 end
 
-def api.responses.text(~status, ~headers=[], ~body) =
+def api.responses.html(~body, ~headers=[], ~status) =
   api.responses.http(
-    status=status,
-    headers=list.append(headers, [("Content-Type", "text/plain")]),
-    body=body
-  )
-end
-
-def api.responses.html(~status, ~headers=[], ~body) =
-  api.responses.http(
-    status=status,
+    body=body,
     headers=list.append(headers, [("Content-Type", "text/html")]),
-    body=body
+    status=status
   )
 end
 
-def api.responses.json(~status, ~headers=[], ~body) =
+def api.responses.json(~body, ~headers=[], ~status) =
   api.responses.http(
-    status=status,
+    body=body,
     headers=list.append(headers, [("Content-Type", "application/json")]),
-    body=body
+    status=status
+  )
+end
+
+def api.responses.text(~body, ~headers=[], ~status) =
+  api.responses.http(
+    body=body,
+    headers=list.append(headers, [("Content-Type", "text/plain")]),
+    status=status
   )
 end
