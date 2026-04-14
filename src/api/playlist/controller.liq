@@ -7,8 +7,8 @@ def api.playlist.controller.get(_) =
       body=api.playlist.models.getresponse.serialize(response),
       status=api.codes.ok
     )
-  catch error : [api.playlist.errors.notfound] do
-    api.responses.text(body=error.message, status=api.codes.notfound)
+  catch e : [api.playlist.errors.notfound] do
+    api.responses.text(body=e.message, status=api.codes.notfound)
   end
 end
 
@@ -20,8 +20,8 @@ def api.playlist.controller.put(request) =
       body=api.playlist.models.putresponse.serialize(res),
       status=api.codes.ok
     )
-  catch error : [error.json] do
-    api.responses.text(body=error.message, status=api.codes.badrequest)
+  catch e : [error.json, api.playlist.errors.badrequest] do
+    api.responses.text(body=e.message, status=api.codes.badrequest)
   end
 end
 
