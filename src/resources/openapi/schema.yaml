@@ -70,7 +70,7 @@ components:
         id:
           type: string
           format: uuid
-          example: 123e4567-e89b-12d3-a456-426614174000
+          example: 8be4df61-93ca-11d2-aa0d-00e098032b8c
       required:
         - id
     PutPlaylistRequest:
@@ -79,7 +79,7 @@ components:
         id:
           type: string
           format: uuid
-          example: 123e4567-e89b-12d3-a456-426614174000
+          example: 8be4df61-93ca-11d2-aa0d-00e098032b8c
       required:
         - id
     PutPlaylistResponse:
@@ -88,6 +88,6 @@ components:
         id:
           type: string
           format: uuid
-          example: 123e4567-e89b-12d3-a456-426614174000
+          example: 8be4df61-93ca-11d2-aa0d-00e098032b8c
       required:
         - id

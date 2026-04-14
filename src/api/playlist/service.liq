@@ -1,6 +1,6 @@
 let api.playlist.service = {}
 
-def api.playlist.service.get() =
+def api.playlist.service.get(_) =
   def notfound() =
     error.raise(
       api.playlist.errors.notfound,

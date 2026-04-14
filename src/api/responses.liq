@@ -31,3 +31,11 @@ def api.responses.text(~body, ~headers=[], ~status) =
     status=status
   )
 end
+
+def api.responses.yaml(~body, ~headers=[], ~status) =
+  api.responses.http(
+    body=body,
+    headers=list.append(headers, [("Content-Type", "application/yaml")]),
+    status=status
+  )
+end

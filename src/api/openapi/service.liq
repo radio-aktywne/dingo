@@ -1,36 +1,11 @@
 let api.openapi.service = {}
 
-def api.openapi.service.get =
-  source = "openapi/schema.yaml"
-  target = "openapi/docs.html"
+def api.openapi.service.docs(_) =
+  docs = file.contents("src/resources/openapi/docs.html")
+  api.openapi.models.docsresponse.create(docs=docs)
+end
 
-  cached = ref("")
-
-  def handle() =
-    current = file.contents(source)
-
-    if
-      not file.exists(target) or current != cached()
-    then
-      if
-        process.test(
-          process.quote.command(
-            args=["build-docs", "--output", target, source],
-            "redocly"
-          )
-        )
-      then
-        cached := current
-      else
-        error.raise(
-          api.openapi.errors.generate,
-          "Failed to generate OpenAPI docs."
-        )
-      end
-    end
-
-    file.contents(target)
-  end
-
-  handle
+def api.openapi.service.schema(_) =
+  schema = file.contents("src/resources/openapi/schema.yaml")
+  api.openapi.models.schemaresponse.create(schema=schema)
 end

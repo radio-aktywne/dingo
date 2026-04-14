@@ -1,7 +1,8 @@
 let api.ping.controller = {}
 
 def api.ping.controller.ping(_) =
-  api.ping.service.ping()
+  req = api.ping.models.pingrequest.create()
+  api.ping.service.ping(req)
   api.responses.empty(headers=[("Cache-Control", "no-cache")])
 end
 
