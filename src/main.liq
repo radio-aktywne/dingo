@@ -1,6 +1,7 @@
 %include "constants/index.liq"
 %include "utils/index.liq"
 %include "config/index.liq"
+%include "services/index.liq"
 %include "state.liq"
 %include "inputs.liq"
 %include "streams.liq"
