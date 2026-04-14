@@ -65,5 +65,14 @@ curl \
 ## OpenAPI
 
 You can view the [`OpenAPI`](https://www.openapis.org)
-documentation made with [`Redocly`](https://redocly.com)
+documentation made with [`Scalar`](https://scalar.com)
 by navigating to the `/openapi` endpoint in your browser.
+
+You can also download the specification in YAML format
+by sending a `GET` request to the `/openapi/openapi.yaml` endpoint.
+
+For example, you can use `curl` to do that:
+
+```sh
+curl --request GET http://localhost:10101/openapi/openapi.yaml
+```

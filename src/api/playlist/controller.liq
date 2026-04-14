@@ -2,9 +2,10 @@ let api.playlist.controller = {}
 
 def api.playlist.controller.get(_) =
   try
-    response = api.playlist.service.get()
+    req = api.playlist.models.getrequest.create()
+    res = api.playlist.service.get(req)
     api.responses.json(
-      body=api.playlist.models.getresponse.serialize(response),
+      body=api.playlist.models.getresponse.serialize(res),
       status=api.codes.ok
     )
   catch e : [api.playlist.errors.notfound] do

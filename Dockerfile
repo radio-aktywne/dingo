@@ -42,9 +42,6 @@ RUN useradd --create-home service && \
 COPY scripts/shell.sh scripts/shell.sh
 SHELL ["/service/scripts/shell.sh"]
 
-# Copy OpenAPI schema
-COPY openapi/ openapi/
-
 # Copy source
 COPY src/ src/
 

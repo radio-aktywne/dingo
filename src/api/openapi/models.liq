@@ -1,6 +1,6 @@
-let api.playlist.models = {}
+let api.openapi.models = {}
 
-def api.playlist.models.getrequest =
+def api.openapi.models.docsrequest =
   def create() =
     {}
   end
@@ -17,9 +17,9 @@ def api.playlist.models.getrequest =
   {create=create, serialize=serialize, deserialize=deserialize}
 end
 
-def api.playlist.models.getresponse =
-  def create(~id) =
-    {id=id}
+def api.openapi.models.docsresponse =
+  def create(~docs) =
+    {docs=docs}
   end
 
   def serialize(model) =
@@ -27,16 +27,16 @@ def api.playlist.models.getresponse =
   end
 
   def deserialize(data) =
-    let json.parse (model : {id: string}) = data
+    let json.parse (model : {docs: string}) = data
     model
   end
 
   {create=create, serialize=serialize, deserialize=deserialize}
 end
 
-def api.playlist.models.putrequest =
-  def create(~id) =
-    {id=id}
+def api.openapi.models.schemarequest =
+  def create() =
+    {}
   end
 
   def serialize(model) =
@@ -44,16 +44,16 @@ def api.playlist.models.putrequest =
   end
 
   def deserialize(data) =
-    let json.parse (model : {id: string}) = data
+    let json.parse (model : {}) = data
     model
   end
 
   {create=create, serialize=serialize, deserialize=deserialize}
 end
 
-def api.playlist.models.putresponse =
-  def create(~id) =
-    {id=id}
+def api.openapi.models.schemaresponse =
+  def create(~schema) =
+    {schema=schema}
   end
 
   def serialize(model) =
@@ -61,7 +61,7 @@ def api.playlist.models.putresponse =
   end
 
   def deserialize(data) =
-    let json.parse (model : {id: string}) = data
+    let json.parse (model : {schema: string}) = data
     model
   end
 

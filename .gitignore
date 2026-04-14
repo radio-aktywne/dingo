@@ -13,6 +13,3 @@
 # Data
 /data/*
 !/data/.gitkeep
-
-# OpenAPI
-/openapi/docs.html

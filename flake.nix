@@ -43,7 +43,6 @@
         trunk = pkgs.trunk-io;
         copier = pkgs.python313.withPackages (ps: [ps.copier]);
         liquidsoap = pkgs.liquidsoap;
-        redocly = pkgs.redocly;
         ffmpeg = pkgs.ffmpeg;
         tini = pkgs.tini;
         su-exec = pkgs.su-exec;
@@ -78,7 +77,6 @@
               trunk
               copier
               liquidsoap
-              redocly
               ffmpeg
             ];
 
@@ -92,7 +90,6 @@
 
             packages = [
               liquidsoap
-              redocly
               tini
               su-exec
             ];
