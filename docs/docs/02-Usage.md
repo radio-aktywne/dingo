@@ -44,11 +44,12 @@ ffmpeg \
 
 ## Managing playlists
 
-You can manage currently used playlist using the `/playlist` endpoint.
+You can manage the currently used playlist using the `/playlist` endpoint.
 You can use the following HTTP methods:
 
-- `GET` to retrieve the current playlist data
-- `PUT` to update the current playlist data
+- `GET` to retrieve the current playlist
+- `PUT` to update the current playlist
+- `DELETE` to remove the current playlist
 
 For example, to change the playlist to use a different one,
 you can use [`curl`](https://curl.se)
