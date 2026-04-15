@@ -26,5 +26,16 @@ def api.playlist.controller.put(request) =
   end
 end
 
+def api.playlist.controller.delete(_) =
+  req = api.playlist.models.deleterequest.create()
+  api.playlist.service.delete(req)
+  api.responses.empty()
+end
+
 api.app.register(method="GET", path="/playlist", api.playlist.controller.get)
 api.app.register(method="PUT", path="/playlist", api.playlist.controller.put)
+api.app.register(
+  method="DELETE",
+  path="/playlist",
+  api.playlist.controller.delete
+)

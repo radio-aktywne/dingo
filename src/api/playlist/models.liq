@@ -67,3 +67,37 @@ def api.playlist.models.putresponse =
 
   {create=create, serialize=serialize, deserialize=deserialize}
 end
+
+def api.playlist.models.deleterequest =
+  def create() =
+    {}
+  end
+
+  def serialize(model) =
+    json.stringify(model)
+  end
+
+  def deserialize(data) =
+    let json.parse (model : {}) = data
+    model
+  end
+
+  {create=create, serialize=serialize, deserialize=deserialize}
+end
+
+def api.playlist.models.deleteresponse =
+  def create() =
+    {}
+  end
+
+  def serialize(model) =
+    json.stringify(model)
+  end
+
+  def deserialize(data) =
+    let json.parse (model : {}) = data
+    model
+  end
+
+  {create=create, serialize=serialize, deserialize=deserialize}
+end

@@ -4,7 +4,7 @@ def api.playlist.service.get(_) =
   def notfound() =
     error.raise(
       api.playlist.errors.notfound,
-      "Playlist data not found."
+      "No playlist is currently set."
     )
   end
 
@@ -52,4 +52,12 @@ def api.playlist.service.put(request) =
   state := s
 
   api.playlist.models.putresponse.create(id=playlist.id)
+end
+
+def api.playlist.service.delete(_) =
+  s = state()
+  let s.playlist = null()
+  state := s
+
+  api.playlist.models.deleteresponse.create()
 end

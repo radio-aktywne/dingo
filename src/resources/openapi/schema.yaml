@@ -19,8 +19,8 @@ paths:
                 example: no-cache
   /playlist:
     get:
-      summary: Get playlist data
-      description: Get the current playlist data.
+      summary: Get playlist
+      description: Get the current playlist.
       tags:
         - Playlist
       responses:
@@ -36,10 +36,10 @@ paths:
             text/plain:
               schema:
                 type: string
-                example: Playlist data not found.
+                example: No playlist is currently set.
     put:
-      summary: Update playlist data
-      description: Update the current playlist data.
+      summary: Update playlist
+      description: Update the current playlist.
       tags:
         - Playlist
       requestBody:
@@ -62,6 +62,14 @@ paths:
               schema:
                 type: string
                 example: Request body is not a valid JSON object.
+    delete:
+      summary: Remove playlist
+      description: Remove the current playlist.
+      tags:
+        - Playlist
+      responses:
+        "204":
+          description: Request fulfilled, nothing follows
 components:
   schemas:
     GetPlaylistResponse:
