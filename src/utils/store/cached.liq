@@ -23,5 +23,5 @@ def utils.store.cached.build(~ttl, store) =
     last := time()
   end
 
-  {get=get, set=set}
+  {get = get, set = set}
 end

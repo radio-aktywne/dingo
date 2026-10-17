@@ -9,5 +9,5 @@ def utils.store.file.build(~default, path) =
     file.write(data=value, path)
   end
 
-  {get=get, set=set}
+  {get = get, set = set}
 end

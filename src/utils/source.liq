@@ -6,7 +6,7 @@ end
 
 def utils.source.variable(~track_sensitive=true, get, build) =
   initialized = ref(false)
-  vref = ref(null())
+  vref = ref(null)
 
   def next() =
     v = get()
@@ -14,7 +14,7 @@ def utils.source.variable(~track_sensitive=true, get, build) =
     if
       initialized() and v == vref()
     then
-      null()
+      null
     else
       initialized := true
       vref := v

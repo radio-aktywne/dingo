@@ -4,16 +4,16 @@ cli:
 plugins:
   sources:
     - id: trunk
-      ref: v1.7.4
+      ref: v1.11.0
       uri: https://github.com/trunk-io/plugins
 runtimes:
   enabled:
     # Needed for gitleaks, shfmt
-    - go@1.25.0
+    - go@1.27.0
     # Needed for eslint, markdownlint, prettier, stylelint, svgo
-    - node@22.20.0
+    - node@26.8.2
     # Needed for yamllint
-    - python@3.13.3
+    - python@3.14.4
 lint:
   files:
     # Liquidsoap is not defined by default, so we need to add it
@@ -102,39 +102,39 @@ lint:
           run_from: ${root_or_parent_with_direct_config}
   enabled:
     # GitHub Actions linting
-    - actionlint@1.7.8
+    - actionlint@1.7.12
     # JavaScript and TypeScript linting
-    - eslint@9.39.1
+    - eslint@9.39.5
     # Check for whitespace errors
     - git-diff-check
     # Check for secrets in the code
-    - gitleaks@8.29.0
+    - gitleaks@8.30.1
     # Dockerfile linting
-    - hadolint@2.14.0
+    - hadolint@2.15.1
     # Liquidsoap linting
     - liquidsoap@SYSTEM
     # Markdown linting
-    - markdownlint@0.45.0
+    - markdownlint@0.49.1
     # Nix formatting check
     - nix-fmt-check@SYSTEM
     # Nix flake check
     - nix-flake-check@SYSTEM
     # JS, TS, CSS, HTML, JSON, YAML, Markdown, Liquidsoap formatting
-    - prettier@3.6.2:
+    - prettier@3.9.6:
         packages:
           # Liquidsoap formatting
-          - liquidsoap-prettier@1.7.0
+          - liquidsoap-prettier@1.9.0
           # JSON sorting
-          - prettier-plugin-sort-json@4.1.1
+          - prettier-plugin-sort-json@4.2.0
           # package.json sorting
-          - prettier-plugin-packagejson@2.5.19
+          - prettier-plugin-packagejson@3.0.2
     # Shell linting
     - shellcheck@0.11.0
     # Shell formatting
-    - shfmt@3.12.0
+    - shfmt@3.14.1
     # CSS linting
-    - stylelint@16.25.0
+    - stylelint@17.15.0
     # SVG formatting
-    - svgo@4.0.0
+    - svgo@4.1.0
     # YAML linting
-    - yamllint@1.37.1
+    - yamllint@1.38.0

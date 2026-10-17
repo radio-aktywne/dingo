@@ -14,7 +14,7 @@ def api.ping.models.pingrequest =
     model
   end
 
-  {create=create, serialize=serialize, deserialize=deserialize}
+  {create = create, serialize = serialize, deserialize = deserialize}
 end
 
 def api.ping.models.pingresponse =
@@ -31,5 +31,5 @@ def api.ping.models.pingresponse =
     model
   end
 
-  {create=create, serialize=serialize, deserialize=deserialize}
+  {create = create, serialize = serialize, deserialize = deserialize}
 end

@@ -14,12 +14,12 @@ def api.playlist.models.getrequest =
     model
   end
 
-  {create=create, serialize=serialize, deserialize=deserialize}
+  {create = create, serialize = serialize, deserialize = deserialize}
 end
 
 def api.playlist.models.getresponse =
   def create(~id) =
-    {id=id}
+    {id = id}
   end
 
   def serialize(model) =
@@ -31,12 +31,12 @@ def api.playlist.models.getresponse =
     model
   end
 
-  {create=create, serialize=serialize, deserialize=deserialize}
+  {create = create, serialize = serialize, deserialize = deserialize}
 end
 
 def api.playlist.models.putrequest =
   def create(~id) =
-    {id=id}
+    {id = id}
   end
 
   def serialize(model) =
@@ -48,12 +48,12 @@ def api.playlist.models.putrequest =
     model
   end
 
-  {create=create, serialize=serialize, deserialize=deserialize}
+  {create = create, serialize = serialize, deserialize = deserialize}
 end
 
 def api.playlist.models.putresponse =
   def create(~id) =
-    {id=id}
+    {id = id}
   end
 
   def serialize(model) =
@@ -65,7 +65,7 @@ def api.playlist.models.putresponse =
     model
   end
 
-  {create=create, serialize=serialize, deserialize=deserialize}
+  {create = create, serialize = serialize, deserialize = deserialize}
 end
 
 def api.playlist.models.deleterequest =
@@ -82,7 +82,7 @@ def api.playlist.models.deleterequest =
     model
   end
 
-  {create=create, serialize=serialize, deserialize=deserialize}
+  {create = create, serialize = serialize, deserialize = deserialize}
 end
 
 def api.playlist.models.deleteresponse =
@@ -99,5 +99,5 @@ def api.playlist.models.deleteresponse =
     model
   end
 
-  {create=create, serialize=serialize, deserialize=deserialize}
+  {create = create, serialize = serialize, deserialize = deserialize}
 end

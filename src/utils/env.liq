@@ -4,7 +4,7 @@ def utils.env.get(key) =
   try
     list.assoc(key, environment())
   catch _ : [error.not_found] do
-    null()
+    null
   end
 end
 
