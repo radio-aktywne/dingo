@@ -13,7 +13,10 @@ def utils.metadata.title(md) =
     artist != "" and title != ""
   then
     "#{artist} - #{title}"
-  elsif title != "" then title
+  elsif
+    title != ""
+  then
+    title
   else
     constants.metadata.defaults.title
   end
@@ -30,7 +33,7 @@ def utils.metadata.transform(transforms, source) =
     predicate = fun (m) -> string.lowercase(fst(m)) == string.lowercase(key)
     exists = list.exists(predicate, md)
 
-    (key, exists ? update(list.find(predicate, md), md) : insert(md) )
+    (key, exists ? update(list.find(predicate, md), md) : insert(md))
   end
 
   def transform(md) =

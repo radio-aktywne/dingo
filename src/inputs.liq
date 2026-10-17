@@ -6,8 +6,8 @@ let inputs.live =
   buffer(
     input.srt(
       port=config.server.srt.port,
-      read_timeout=null(),
-      write_timeout=null()
+      read_timeout=null,
+      write_timeout=null
     )
   )
 
@@ -18,7 +18,7 @@ let inputs.playlist =
       begin
         def reset() =
           s = state()
-          let s.playlist = null()
+          let s.playlist = null
           state := s
         end
 

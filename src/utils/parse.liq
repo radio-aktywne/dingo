@@ -9,9 +9,9 @@ def utils.parse.int(value) =
 end
 
 def utils.parse.ofloat(value) =
-  value == "" ? null() : (utils.parse.float(value))
+  value == "" ? null : (utils.parse.float(value))
 end
 
 def utils.parse.oint(value) =
-  value == "" ? null() : (utils.parse.int(value))
+  value == "" ? null : (utils.parse.int(value))
 end

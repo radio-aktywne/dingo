@@ -14,12 +14,12 @@ def api.openapi.models.docsrequest =
     model
   end
 
-  {create=create, serialize=serialize, deserialize=deserialize}
+  {create = create, serialize = serialize, deserialize = deserialize}
 end
 
 def api.openapi.models.docsresponse =
   def create(~docs) =
-    {docs=docs}
+    {docs = docs}
   end
 
   def serialize(model) =
@@ -31,7 +31,7 @@ def api.openapi.models.docsresponse =
     model
   end
 
-  {create=create, serialize=serialize, deserialize=deserialize}
+  {create = create, serialize = serialize, deserialize = deserialize}
 end
 
 def api.openapi.models.schemarequest =
@@ -48,12 +48,12 @@ def api.openapi.models.schemarequest =
     model
   end
 
-  {create=create, serialize=serialize, deserialize=deserialize}
+  {create = create, serialize = serialize, deserialize = deserialize}
 end
 
 def api.openapi.models.schemaresponse =
   def create(~schema) =
-    {schema=schema}
+    {schema = schema}
   end
 
   def serialize(model) =
@@ -65,5 +65,5 @@ def api.openapi.models.schemaresponse =
     model
   end
 
-  {create=create, serialize=serialize, deserialize=deserialize}
+  {create = create, serialize = serialize, deserialize = deserialize}
 end

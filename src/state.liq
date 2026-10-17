@@ -8,7 +8,7 @@ def state =
     v
   end
 
-  default = {playlist=null()}
+  default = {playlist = null}
   store =
     utils.store.cached.build(
       ttl=config.state.cache.ttl,

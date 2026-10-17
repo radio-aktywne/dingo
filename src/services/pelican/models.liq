@@ -2,7 +2,7 @@ let services.pelican.models = {}
 
 def services.pelican.models.getplaylistrequest =
   def create(~id) =
-    {id=id}
+    {id = id}
   end
 
   def serialize(model) =
@@ -14,12 +14,12 @@ def services.pelican.models.getplaylistrequest =
     model
   end
 
-  {create=create, serialize=serialize, deserialize=deserialize}
+  {create = create, serialize = serialize, deserialize = deserialize}
 end
 
 def services.pelican.models.getplaylistresponse =
   def create(~id, ~name) =
-    {id=id, name=name}
+    {id = id, name = name}
   end
 
   def serialize(model) =
@@ -31,5 +31,5 @@ def services.pelican.models.getplaylistresponse =
     model
   end
 
-  {create=create, serialize=serialize, deserialize=deserialize}
+  {create = create, serialize = serialize, deserialize = deserialize}
 end

@@ -15,7 +15,7 @@ def api.playlist.service.get(_) =
       services.pelican.service.getplaylist(request)
     catch _ : [services.pelican.errors.playlistnotfound] do
       s = state()
-      let s.playlist = null()
+      let s.playlist = null
       state := s
 
       notfound()
@@ -48,7 +48,7 @@ def api.playlist.service.put(request) =
   playlist = fetch(request.id)
 
   s = state()
-  let s.playlist = {id=playlist.id}
+  let s.playlist = {id = playlist.id}
   state := s
 
   api.playlist.models.putresponse.create(id=playlist.id)
@@ -56,7 +56,7 @@ end
 
 def api.playlist.service.delete(_) =
   s = state()
-  let s.playlist = null()
+  let s.playlist = null
   state := s
 
   api.playlist.models.deleteresponse.create()
