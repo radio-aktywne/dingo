@@ -14,7 +14,13 @@ let streams.main =
     mksafe(
       fallback(
         track_sensitive=false,
-        [inputs.live, inputs.playlist, inputs.fallback]
+        [
+          switch(
+            track_sensitive=fun () -> not inputs.live.interruptible(),
+            [(fun () -> true, inputs.live), (fun () -> true, inputs.playlist)]
+          ),
+          inputs.fallback
+        ]
       )
     )
   )
