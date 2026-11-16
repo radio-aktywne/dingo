@@ -2,6 +2,8 @@ let inputs = {}
 
 let inputs.fallback = single(constants.paths.fallback)
 
+let inputs.transition = source.drop.metadata(single(constants.paths.transition))
+
 let inputs.live =
   begin
     pending = ref(false)
@@ -60,6 +62,7 @@ let inputs.live =
     )
 
     live.{
+      playable = fun () -> live.is_ready() and live.buffer_length() > 0,
       interruptible =
         fun () ->
           (hard() and not pending())
@@ -92,6 +95,7 @@ let inputs.playlist =
           playlist(
             loop=true,
             max_fail=3,
+            mime_type="audio/mpegurl",
             mode="normal",
             on_reload=fun (_) ->
               null.case(
