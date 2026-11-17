@@ -27,7 +27,14 @@ but we recommend using [`Opus`](https://opus-codec.org) and
 They are free and open source, focused on quality and efficiency,
 and support embedding metadata into the stream.
 
-For example, you can use [`ffmpeg`](https://ffmpeg.org) for that:
+You can choose how live audio starts using the `dingo_start` parameter in the
+[`SRT` stream ID](https://github.com/Haivision/srt/blob/master/docs/features/access-control.md):
+
+- `hard` to interrupt current track and start playing new audio immediately (default)
+- `soft` to buffer new audio while waiting for the current track to finish
+
+For example, you can use [`ffmpeg`](https://ffmpeg.org)
+to send live audio with a soft start:
 
 ```sh
 ffmpeg \
@@ -39,6 +46,7 @@ ffmpeg \
     -ar 48000 \
     -b:a 256k \
     -metadata title=test \
+    -srt_streamid '#!::dingo_start=soft' \
     srt://127.0.0.1:10100
 ```
 

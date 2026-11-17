@@ -7,6 +7,9 @@ title: Configuration
 
 You can configure the service at runtime using various environment variables:
 
+- `DINGO__INPUTS__LIVE__BUFFER` -
+  queued live audio threshold in seconds before forcing a handover
+  (default: `900`)
 - `DINGO__PELICAN__HTTP__HOST` -
   host of the HTTP API of the pelican service
   (default: `localhost`)
@@ -37,7 +40,7 @@ You can configure the service at runtime using various environment variables:
 - `DINGO__SERVER__HTTP__PORT` -
   port to listen for HTTP connections
   (default: `10101`)
-- `DINGO__SERVER__SRT__PORT`
+- `DINGO__SERVER__SRT__PORT` -
   port to listen for SRT connections
   (default: `10100`)
 - `DINGO__STATE__CACHE__TTL` -

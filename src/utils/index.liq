@@ -1,5 +1,6 @@
 let utils = {}
 
+%include "srt/index.liq"
 %include "store/index.liq"
 %include "env.liq"
 %include "metadata.liq"
